@@ -1,18 +1,15 @@
-import { useState } from 'react'
-
-import Grid from '@mui/material/Unstable_Grid2';
-
-import './App.css'
-import LoginPage from './Pages';
+import "./App.css";
+import LoginPage from "./Pages";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <LoginPage/>
-    </>
-  )
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <LoginPage />,
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
